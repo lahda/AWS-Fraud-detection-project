@@ -1,9 +1,3 @@
-# 1. Ouvrir CloudShell
-# Console AWS (en haut à droite) → Icône >_ CloudShell
-
-# 2. Créer le fichier avec cat
-cat > generate_transactions.py << 'EOF'
-```python
 import requests
 import json
 import random
@@ -64,9 +58,10 @@ print("\n✅ TERMINÉ! Vérifiez:")
 print("1. Emails SNS")
 print("2. CloudWatch Logs")
 print("3. S3 raw/ (attendre 2 min)")
-```
+
 
 Exécuter:
 
 pip install requests
 python generate_transactions.py
+
