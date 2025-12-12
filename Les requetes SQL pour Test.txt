@@ -1,0 +1,15 @@
+Les requetes SQL pour Test:
+
+
+-- 1. Vérification base
+SELECT COUNT(*) FROM raw;
+
+-- 2. Détection fraude
+SELECT user_id, amount FROM raw WHERE amount > 5000 ORDER BY amount DESC;
+
+-- 3. Dashboard
+SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN amount > 5000 THEN 1 ELSE 0 END) as high_risk,
+    ROUND(100.0 * SUM(CASE WHEN amount > 5000 THEN 1 ELSE 0 END) / COUNT(*), 2) as pct_risk
+FROM raw;
